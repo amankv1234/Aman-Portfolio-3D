@@ -19,7 +19,7 @@
   --glass-sh:    0 8px 40px rgba(0,0,0,0.5);
   --radius:      20px;
   --radius-sm:   12px;
-  --ease:        cubic-bezier(.4,0,.2,1);
+  --ease:        cubic-bezier(0.22, 1, 0.36, 1);
   --t-fast:      .25s;
   --t-mid:       .45s;
   --t-slow:      .7s;
@@ -243,6 +243,7 @@ button { border: none; background: none; font-family: inherit; }
 
 /* Floating orbs */
 .orb {
+  will-change: transform;
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
@@ -478,7 +479,7 @@ button { border: none; background: none; font-family: inherit; }
 }
 .section-header h2 {
   font-family: var(--font-head);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -1.5px;
   font-weight: 800;
   letter-spacing: -1px;
 }
@@ -490,6 +491,7 @@ button { border: none; background: none; font-family: inherit; }
 
 /* Glass card utility */
 .glass {
+  will-change: transform, box-shadow, border-color;
   background: var(--glass-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -567,7 +569,7 @@ button { border: none; background: none; font-family: inherit; }
 .glow-btn { animation: glow-pulse 2.5s ease infinite; }
 @keyframes glow-pulse {
   0%,100% { box-shadow: 0 4px 20px rgba(0,243,255,.25); }
-  50%      { box-shadow: 0 8px 40px rgba(112,0,255,.5), 0 0 60px rgba(0,243,255,.2); }
+  50%      { box-shadow: 0 10px 50px rgba(112,0,255,.6), 0 0 80px rgba(0,243,255,.3); }
 }
 
 /* =====================================================================
@@ -1498,6 +1500,7 @@ button { border: none; background: none; font-family: inherit; }
    PROFILE IMAGE SECTION (HERO)
    ===================================================================== */
 .hero-profile-wrap {
+  will-change: transform, box-shadow;
   position: relative;
   width: 180px;
   height: 180px;
@@ -1553,108 +1556,233 @@ button { border: none; background: none; font-family: inherit; }
    SKILLS REDESIGN
    ===================================================================== */
 .skills-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  align-items: start;
 }
+
 .skills-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
+
 .skill-category {
-  flex: 1 1 250px;
-  max-width: 400px;
-  background: rgba(255,255,255,0.02);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-bd);
-  border-radius: var(--radius);
-  padding: 30px;
-  transition: all var(--t-mid);
-  box-shadow: var(--glass-sh);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  transition: transform var(--t-mid), box-shadow var(--t-mid), border-color var(--t-mid);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
+
 .skill-category:hover {
-  border-color: rgba(0,243,255,0.2);
-  background: rgba(0,243,255,0.04);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  transform: translateY(-5px);
+  border-color: rgba(0,243,255,0.25);
+  background: rgba(0,243,255,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(0,243,255,0.08);
+  transform: translateY(-4px);
 }
+
 .category-title {
   font-family: var(--font-head);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding-bottom: 15px;
+  padding-bottom: 12px;
 }
+
 .category-title i {
   color: var(--blue);
-  font-size: 1.3rem;
-  filter: drop-shadow(0 0 10px var(--blue));
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 8px rgba(0,243,255,0.4));
 }
+
 .category-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
 }
+
 .skill-card {
-  padding: 20px 10px;
+  will-change: transform, box-shadow;
+  padding: 16px 10px;
   border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
 }
+
+.skill-card:hover {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 .skill-card i {
-  font-size: 2.2rem;
+  font-size: 2rem;
+  transition: transform var(--t-fast), filter var(--t-fast);
 }
+
+.skill-card:hover i {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
 .skill-card span {
-  font-size: 0.8rem;
-  margin-top: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text);
+  letter-spacing: 0.5px;
 }
 
 /* =====================================================================
-   PROJECTS REDESIGN (CASE STUDY FEEL)
+   PROJECTS REDESIGN (COMPACT & CLEAN)
    ===================================================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
 }
+
 .project-card {
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  will-change: transform, box-shadow;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--glass-bd);
+  overflow: hidden;
+  transition: transform var(--t-mid), box-shadow var(--t-mid), border-color var(--t-mid);
 }
+
+.project-card:hover {
+  border-color: rgba(0,243,255,0.2);
+}
+
 .project-thumb {
-  height: 200px;
+  height: 190px;
 }
+
 .project-body {
-  padding: 25px 25px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
+
 .project-body h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
+
 .project-body p {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.65;
+  color: var(--muted);
 }
+
+.project-meta {
+  margin-bottom: 12px;
+}
+
+.tech-chips {
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-chips span {
+  font-size: 0.75rem;
+  padding: 5px 12px;
+}
+
 .project-actions {
   margin-top: auto;
-  padding-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.project-actions .btn {
+  padding: 10px 18px;
+  font-size: 0.85rem;
+}
+
+/* =====================================================================
+   GLOBAL SPACING & ALIGNMENT REFINEMENT
+   ===================================================================== */
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  margin-bottom: 56px;
+}
+
+.about-grid {
+  gap: 50px;
+  align-items: center;
+}
+
+.about-card {
+  padding: 40px 30px;
+}
+
+.achievements-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.ach-card {
+  padding: 36px 24px;
+  gap: 14px;
+}
+
+.ach-icon {
+  width: 64px; height: 64px;
+  font-size: 1.6rem;
+}
+
+.ach-card h4 {
+  font-size: 1.1rem;
+}
+
+.contact-grid {
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+  .about-grid {
+    gap: 40px;
+  }
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
   }
   .skills-categories {
     grid-template-columns: 1fr;
   }
 }
-
