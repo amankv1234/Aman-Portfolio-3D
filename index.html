@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aman Kumar Vishwakarma – Full Stack Developer, MERN Developer, Open Source Contributor & AI Enthusiast. Premium Developer Portfolio." />
+  <meta name="keywords" content="Aman Kumar Vishwakarma, Full Stack Developer, MERN, portfolio, open source, software engineer" />
+  <meta name="author" content="Aman Kumar Vishwakarma" />
+  <title>Aman Kumar Vishwakarma | Full Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-rings">
+        <div class="loader-ring r1"></div>
+        <div class="loader-ring r2"></div>
+        <div class="loader-ring r3"></div>
+      </div>
+      <div class="loader-logo">AK<span>V</span></div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <p class="loader-text">Loading Experience...</p>
+    </div>
+  </div>
+
+  <!-- ===================== MOUSE GRADIENT ===================== -->
+  <div class="mouse-gradient" id="mouseGradient"></div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Aman<span>.dev</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"         class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#about"        class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"       class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects"     class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#opensource"    class="nav-link" data-section="opensource">Open Source</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+        <li><a href="#resume"       class="nav-link" data-section="resume">Resume</a></li>
+        <li><a href="#contact"      class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero">
+    <!-- Animated grid background -->
+    <div class="hero-grid"></div>
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+
+    <!-- Particles canvas -->
+    <div id="particles-js"></div>
+
+    <!-- Floating tech badges -->
+    <div class="tech-badge tb-1" data-speed="1.2"><i class="fab fa-react"></i></div>
+    <div class="tech-badge tb-2" data-speed="0.8"><i class="fab fa-node-js"></i></div>
+    <div class="tech-badge tb-3" data-speed="1.5"><i class="fab fa-js"></i></div>
+    <div class="tech-badge tb-4" data-speed="1.0"><i class="fab fa-python"></i></div>
+    <div class="tech-badge tb-5" data-speed="1.3"><i class="fab fa-github"></i></div>
+    <div class="tech-badge tb-6" data-speed="0.9"><i class="fab fa-docker"></i></div>
+    <div class="tech-badge tb-7" data-speed="1.1"><i class="fas fa-database"></i></div>
+    <div class="tech-badge tb-8" data-speed="0.7"><i class="fas fa-brain"></i></div>
+
+    <div class="hero-content">
+      <div class="hero-tag"><span class="dot-pulse"></span> Open to Opportunities</div>
+      <h2 class="hero-greeting">Hello, I'm</h2>
+      <h1 class="hero-name">
+        Aman Kumar<br />
+        <span class="name-gradient">Vishwakarma</span>
+      </h1>
+      <div class="hero-typed">
+        <span class="typed-prefix">I'm a </span><span id="typed"></span>
+      </div>
+      <p class="hero-desc">
+        Full Stack Developer | MERN Developer | Open Source Contributor | AI Enthusiast
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary magnetic-btn">
+          <span>View Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/1CKNfIIpKL4mY1Xnr5Da_JfyyRLdV0ReF/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-ghost magnetic-btn">
+          <i class="fas fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic-btn">
+          <span>Contact Me</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-num" data-count="10">0</span><span>+</span><p>Projects</p></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num" data-count="8">0</span><span>+</span><p>Technologies</p></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num" data-count="3">0</span><span>+</span><p>Open Source PRs</p></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Who I Am</p>
+        <h2>About <span>Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass reveal">
+          <div class="about-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-circle">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="avatar-status">
+              <span class="status-dot"></span> Open to Work
+            </div>
+          </div>
+          <div class="about-quick-facts">
+            <div class="quick-fact">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>India</span>
+            </div>
+            <div class="quick-fact">
+              <i class="fas fa-code"></i>
+              <span>Full Stack Dev</span>
+            </div>
+            <div class="quick-fact">
+              <i class="fas fa-heart"></i>
+              <span>Open Source</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-info reveal">
+          <blockquote class="about-quote">
+            "Building scalable web applications and impactful digital products."
+          </blockquote>
+          <p class="about-body">
+            I am <strong>Aman Kumar Vishwakarma</strong>, a passionate <em>Computer Science Engineering</em> student and
+            <strong>Full Stack Developer</strong> focused on building scalable web applications and impactful digital products.
+            I enjoy working with <em>MERN stack, AI-powered solutions, modern UI/UX,</em> and <em>open-source collaboration</em>
+            while continuously learning and improving my development skills.
+          </p>
+
+          <div class="about-pills">
+            <span class="pill"><i class="fas fa-layer-group"></i> MERN Stack</span>
+            <span class="pill"><i class="fas fa-brain"></i> AI Enthusiast</span>
+            <span class="pill"><i class="fas fa-code-branch"></i> Open Source</span>
+            <span class="pill"><i class="fas fa-rocket"></i> Full Stack Dev</span>
+          </div>
+
+          <div class="about-edu">
+            <h4><i class="fas fa-university"></i> Education</h4>
+            <div class="edu-timeline">
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-text">
+                  <strong>B.Tech – Computer Science &amp; Engineering</strong>
+                  <p>Rajkiya Engineering College Kannauj</p>
+                  <div class="edu-badge">CGPA: 8.59</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section skills">
+    <div class="bg-blur-left"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">What I Know</p>
+        <h2>My <span>Skills</span></h2>
+      </div>
+
+      <div class="skills-layout">
+        <!-- Skill Cards by Category -->
+        <div class="skills-categories reveal">
+
+          <!-- Languages -->
+          <div class="skill-category">
+            <h3 class="category-title"><i class="fas fa-terminal"></i> Languages</h3>
+            <div class="category-cards">
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#F7DF1E"></div>
+                <i class="fab fa-js" style="color:#F7DF1E"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#00599C"></div>
+                <i class="fas fa-code" style="color:#00599C"></i>
+                <span>C++</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#3776AB"></div>
+                <i class="fab fa-python" style="color:#3776AB"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-category">
+            <h3 class="category-title"><i class="fas fa-palette"></i> Frontend</h3>
+            <div class="category-cards">
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#61DAFB"></div>
+                <i class="fab fa-react" style="color:#61DAFB"></i>
+                <span>React.js</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#ffffff"></div>
+                <i class="fas fa-bolt" style="color:#ffffff"></i>
+                <span>Next.js</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#E34F26"></div>
+                <i class="fab fa-html5" style="color:#E34F26"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#1572B6"></div>
+                <i class="fab fa-css3-alt" style="color:#1572B6"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#06B6D4"></div>
+                <i class="fas fa-wind" style="color:#06B6D4"></i>
+                <span>Tailwind</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#88CE02"></div>
+                <i class="fas fa-magic" style="color:#88CE02"></i>
+                <span>GSAP</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#ff00c8"></div>
+                <i class="fas fa-film" style="color:#ff00c8"></i>
+                <span>Framer Motion</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-category">
+            <h3 class="category-title"><i class="fas fa-server"></i> Backend</h3>
+            <div class="category-cards">
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#68A063"></div>
+                <i class="fab fa-node-js" style="color:#68A063"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#ffffff"></div>
+                <i class="fas fa-server" style="color:#ffffff"></i>
+                <span>Express.js</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#00f3ff"></div>
+                <i class="fas fa-plug" style="color:#00f3ff"></i>
+                <span>REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database & Tools -->
+          <div class="skill-category">
+            <h3 class="category-title"><i class="fas fa-database"></i> Database & Tools</h3>
+            <div class="category-cards">
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#47A248"></div>
+                <i class="fas fa-leaf" style="color:#47A248"></i>
+                <span>MongoDB</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#f14e32"></div>
+                <i class="fab fa-git-alt" style="color:#f14e32"></i>
+                <span>Git</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#ffffff"></div>
+                <i class="fab fa-github" style="color:#ffffff"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#2496ED"></div>
+                <i class="fab fa-docker" style="color:#2496ED"></i>
+                <span>Docker</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#FF6C37"></div>
+                <i class="fas fa-paper-plane" style="color:#FF6C37"></i>
+                <span>Postman</span>
+              </div>
+              <div class="skill-card glass" data-tilt data-tilt-max="12" data-tilt-scale="1.05">
+                <div class="skill-glow" style="--glow:#007ACC"></div>
+                <i class="fas fa-laptop-code" style="color:#007ACC"></i>
+                <span>VS Code</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Progress Bars -->
+        <div class="skills-bars reveal">
+          <h3 class="bars-title">Proficiency Levels</h3>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>React.js / Next.js</span><span class="bar-pct">85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85" style="--bar-color:#61DAFB"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>Node.js / Express</span><span class="bar-pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="80" style="--bar-color:#68A063"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>JavaScript</span><span class="bar-pct">85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85" style="--bar-color:#F7DF1E"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>MongoDB</span><span class="bar-pct">75%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="75" style="--bar-color:#47A248"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>C++ / Python</span><span class="bar-pct">72%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="72" style="--bar-color:#00599C"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>HTML / CSS / Tailwind</span><span class="bar-pct">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="90" style="--bar-color:#00f3ff"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>Git &amp; GitHub</span><span class="bar-pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="80" style="--bar-color:#f14e32"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="bar-label"><span>Docker / DevOps</span><span class="bar-pct">60%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="60" style="--bar-color:#2496ED"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section projects">
+    <div class="bg-blur-right"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">What I've Built</p>
+        <h2>Featured <span>Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card glass reveal">
+          <div class="project-thumb" style="--thumb-color1:#68A063;--thumb-color2:#00f3ff">
+            <i class="fas fa-blog"></i>
+            <div class="thumb-overlay"></div>
+            <div class="project-number">01</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-tag">Full Stack</span>
+            </div>
+            <h3>Modern Blog Application</h3>
+            <p>Secure blog platform with JWT authentication, image upload, dynamic content management, and comment system built with the MEN stack.</p>
+            <div class="tech-chips">
+              <span>Node.js</span><span>Express.js</span><span>EJS</span><span>JWT</span><span>MongoDB</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://blog-app-2-ze1i.onrender.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo <i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/amankv1234/Blog_App" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass reveal">
+          <div class="project-thumb" style="--thumb-color1:#7000ff;--thumb-color2:#ff00c8">
+            <i class="fas fa-comments"></i>
+            <div class="thumb-overlay"></div>
+            <div class="project-number">02</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-tag">Real-Time</span>
+            </div>
+            <h3>Private Chat Application</h3>
+            <p>Real-time private chat platform with dynamic room generation, instant messaging, and Socket.IO powered WebSocket communication.</p>
+            <div class="tech-chips">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Socket.IO</span><span>Node.js</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://private-chat-0qf3.onrender.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo <i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/amankv1234/Private_chat" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass reveal">
+          <div class="project-thumb" style="--thumb-color1:#00f3ff;--thumb-color2:#7000ff">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="thumb-overlay"></div>
+            <div class="project-number">03</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-tag">AI Powered</span>
+            </div>
+            <h3>EduSetu – Career Skill Bridge</h3>
+            <p>AI-powered career guidance and learning roadmap platform built with Gemini API. Provides personalized skill-gap analysis and resource recommendations.</p>
+            <div class="tech-chips">
+              <span>MongoDB</span><span>Express</span><span>Node.js</span><span>Gemini API</span>
+            </div>
+            <div class="project-actions">
+              <span class="btn btn-ghost btn-sm coming-soon-btn"><i class="fas fa-clock"></i> Coming Soon</span>
+              <a href="https://github.com/amankv1234/College_Project_EduSetu" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPEN SOURCE ===================== -->
+  <section id="opensource" class="section opensource">
+    <div class="bg-blur-left"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Community Contributions</p>
+        <h2>Open <span>Source</span></h2>
+      </div>
+
+      <div class="os-grid">
+
+        <!-- Oppia -->
+        <div class="os-card glass reveal">
+          <div class="os-header">
+            <div class="os-icon"><i class="fas fa-book-open"></i></div>
+            <div class="os-org">
+              <h3>Oppia Foundation</h3>
+              <p class="os-desc">Open-source learning platform creating effective and engaging educational experiences.</p>
+            </div>
+          </div>
+          <div class="os-prs">
+            <a href="https://github.com/amankv1234/oppia/pull/1" target="_blank" rel="noopener" class="pr-link">
+              <div class="pr-icon merged"><i class="fas fa-code-branch"></i></div>
+              <div class="pr-info">
+                <span class="pr-title">Pull Request #1</span>
+                <span class="pr-status">Contribution to Oppia</span>
+              </div>
+              <i class="fas fa-external-link-alt pr-arrow"></i>
+            </a>
+            <a href="https://github.com/amankv1234/oppia/pull/2" target="_blank" rel="noopener" class="pr-link">
+              <div class="pr-icon merged"><i class="fas fa-code-branch"></i></div>
+              <div class="pr-info">
+                <span class="pr-title">Pull Request #2</span>
+                <span class="pr-status">Contribution to Oppia</span>
+              </div>
+              <i class="fas fa-external-link-alt pr-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- AOSSIE -->
+        <div class="os-card glass reveal">
+          <div class="os-header">
+            <div class="os-icon"><i class="fas fa-share-alt"></i></div>
+            <div class="os-org">
+              <h3>AOSSIE</h3>
+              <p class="os-desc">Australian Open Source Software Innovation and Education – SocialShareButton project.</p>
+            </div>
+          </div>
+          <div class="os-prs">
+            <a href="https://github.com/AOSSIE-Org/SocialShareButton/pull/22" target="_blank" rel="noopener" class="pr-link">
+              <div class="pr-icon merged"><i class="fas fa-code-branch"></i></div>
+              <div class="pr-info">
+                <span class="pr-title">Pull Request #22</span>
+                <span class="pr-status">SocialShareButton Contribution</span>
+              </div>
+              <i class="fas fa-external-link-alt pr-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GitHub CTA -->
+      <div class="os-cta reveal">
+        <a href="https://github.com/amankv1234" target="_blank" rel="noopener" class="btn btn-primary magnetic-btn">
+          <i class="fab fa-github"></i>
+          <span>View GitHub Profile</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ACHIEVEMENTS ===================== -->
+  <section id="achievements" class="section achievements">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">My Journey</p>
+        <h2>My <span>Achievements</span></h2>
+      </div>
+      <div class="achievements-grid">
+        <div class="ach-card glass reveal">
+          <div class="ach-icon" style="--ach-color:#FFD700"><i class="fas fa-trophy"></i></div>
+          <h4>Top 10 National Hackathon</h4>
+          <p>Finalist at MNNIT Allahabad national-level hackathon, competing against top teams from across India.</p>
+        </div>
+        <div class="ach-card glass reveal">
+          <div class="ach-icon" style="--ach-color:#00f3ff"><i class="fas fa-rocket"></i></div>
+          <h4>E-Cell IIT Bombay NEC 2025</h4>
+          <p>Participated in IIT Bombay's National Entrepreneurship Challenge 2025 — one of India's largest startup competitions.</p>
+        </div>
+        <div class="ach-card glass reveal">
+          <div class="ach-icon" style="--ach-color:#7000ff"><i class="fas fa-brain"></i></div>
+          <h4>Freedom With AI Certificate</h4>
+          <p>Certified in AI fundamentals and practical applications of artificial intelligence technologies.</p>
+        </div>
+        <div class="ach-card glass reveal">
+          <div class="ach-icon" style="--ach-color:#ff00c8"><i class="fas fa-cogs"></i></div>
+          <h4>n8n Workflow Automation</h4>
+          <p>Certified in n8n workflow automation — building automated pipelines and integrations.</p>
+        </div>
+        <div class="ach-card glass reveal">
+          <div class="ach-icon" style="--ach-color:#F7DF1E"><i class="fas fa-star"></i></div>
+          <h4>GSoC 2026 Aspirant</h4>
+          <p>Actively preparing and contributing to open source projects for Google Summer of Code 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESUME ===================== -->
+  <section id="resume" class="section resume-section">
+    <div class="container">
+      <div class="resume-banner glass reveal">
+        <div class="resume-glow"></div>
+        <div class="resume-text">
+          <h2>Grab My <span>Resume</span></h2>
+          <p>A detailed look at my education, skills, projects, open source contributions, and experience — all in one document.</p>
+        </div>
+        <div class="resume-actions">
+          <a href="https://drive.google.com/file/d/1CKNfIIpKL4mY1Xnr5Da_JfyyRLdV0ReF/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-primary btn-lg glow-btn magnetic-btn" id="viewResumeBtn">
+            <i class="fas fa-eye"></i>
+            <span>View Resume</span>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1CKNfIIpKL4mY1Xnr5Da_JfyyRLdV0ReF" target="_blank" rel="noopener" class="btn btn-ghost btn-lg magnetic-btn" id="downloadResumeBtn">
+            <i class="fas fa-download"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact">
+    <div class="bg-blur-right"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Let's Talk</p>
+        <h2>Get In <span>Touch</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info glass reveal">
+          <h3>Contact Information</h3>
+          <p>Feel free to reach out for collaborations, project discussions, internships, or just to say hello!</p>
+
+          <a href="mailto:amankumarvishwakarma767@gmail.com" class="contact-item" id="emailContact">
+            <div class="citem-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span>Email</span>
+              <strong>amankumarvishwakarma767@gmail.com</strong>
+            </div>
+          </a>
+          <a href="tel:+919598490801" class="contact-item" id="phoneContact">
+            <div class="citem-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <span>Phone</span>
+              <strong>+91 9598490801</strong>
+            </div>
+          </a>
+
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/aman-kumar-vishwakarma-08b223304/" target="_blank" rel="noopener" class="csocial" id="linkedinBtn" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/amankv1234" target="_blank" rel="noopener" class="csocial" id="githubBtn" aria-label="GitHub" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://leetcode.com/u/amankv1234/" target="_blank" rel="noopener" class="csocial" id="leetcodeBtn" aria-label="LeetCode" title="LeetCode">
+              <i class="fas fa-code"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap glass reveal">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Your Name</label>
+                <input type="text" id="formName" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="formEmail">Your Email</label>
+                <input type="email" id="formEmail" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Subject</label>
+              <input type="text" id="formSubject" placeholder="Project Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn magnetic-btn" id="submitBtn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <p class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent successfully!
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Aman<span>.dev</span></div>
+          <p>Full Stack Developer · MERN Developer · Open Source Contributor · AI Enthusiast</p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#opensource">Open Source</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social-col">
+          <h5>Connect</h5>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/aman-kumar-vishwakarma-08b223304/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/amankv1234" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/amankv1234/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Designed &amp; Developed by <strong>Aman Kumar Vishwakarma</strong> <i class="fas fa-heart"></i></p>
+        <a href="#home" class="back-top" aria-label="Back to top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
