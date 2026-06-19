@@ -201,7 +201,8 @@ if (document.getElementById('typed')) {
       'Full Stack Developer',
       'MERN Developer',
       'Open Source Contributor',
-      'Future Software Engineer'
+      'GSSoC 2026 Ambassador',
+      'Web Developer Intern'
     ],
     typeSpeed:  55,
     backSpeed:  35,
@@ -458,6 +459,19 @@ if (heroStats) {
 const contactForm = document.getElementById('contactForm');
 const submitBtn   = document.getElementById('submitBtn');
 const formSuccess = document.getElementById('formSuccess');
+const contactToast = document.getElementById('contactToast');
+const toastTitle = document.getElementById('toastTitle');
+const toastMessage = document.getElementById('toastMessage');
+
+function showContactToast(type, title, message) {
+  if (!contactToast) return;
+  contactToast.classList.remove('success', 'error', 'show');
+  contactToast.classList.add(type);
+  if (toastTitle) toastTitle.textContent = title;
+  if (toastMessage) toastMessage.textContent = message;
+  window.setTimeout(() => contactToast.classList.add('show'), 20);
+  window.setTimeout(() => contactToast.classList.remove('show'), 5200);
+}
 
 // Floating label effect – add 'has-value' class when input has content
 document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(input => {
@@ -498,7 +512,7 @@ document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(i
   });
 });
 
-contactForm && contactForm.addEventListener('submit', (e) => {
+contactForm && contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   // Enhanced validation with visual feedback
@@ -528,6 +542,45 @@ contactForm && contactForm.addEventListener('submit', (e) => {
   }
 
   if (!isValid) return;
+
+  submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+  submitBtn.disabled  = true;
+  formSuccess && formSuccess.classList.remove('show');
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) {
+      throw new Error('Message delivery failed');
+    }
+
+    submitBtn.innerHTML = '<span>Sent!</span> <i class="fas fa-check"></i>';
+    submitBtn.style.background = 'linear-gradient(135deg,#00ff88,#00c8ff)';
+
+    formSuccess && formSuccess.classList.add('show');
+    showContactToast('success', 'Message sent to Aman', "Thank you. Your message has been delivered to Aman's email.");
+    contactForm.reset();
+
+    document.querySelectorAll('#contactForm .form-group').forEach(g => {
+      g.classList.remove('has-value', 'error', 'focused');
+    });
+  } catch (error) {
+    submitBtn.innerHTML = '<span>Try Again</span> <i class="fas fa-rotate-right"></i>';
+    showContactToast('error', 'Message not sent', 'Please try again, or email Aman directly at amankumarvishwakarma767@gmail.com.');
+  } finally {
+    setTimeout(() => {
+      submitBtn.innerHTML = '<span>Send Message</span> <i class="fas fa-paper-plane"></i>';
+      submitBtn.style.background = '';
+      submitBtn.disabled = false;
+      formSuccess && formSuccess.classList.remove('show');
+    }, 4200);
+  }
+
+  return;
 
   // Simulate send
   submitBtn.innerHTML = '<span>Sending…</span> <i class="fas fa-spinner fa-spin"></i>';
